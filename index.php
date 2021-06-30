@@ -116,12 +116,36 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
 
 <?php } else {?>
-  <h1>Veuillez choisir vos préférences</h1>
+  <h1 class="text-center">Veuillez choisir vos 3 sports de préférence</h1>
 
+	<form action="accueil.html" method="post" class="d-flex flex-column align-items-center">
+		<label class="mt-5 mb-3">Vos catégories :</label>
+		<div class="mb-2 form-check">
+			<input type="checkbox" class="form-check-input" id="basket" name="1" value="Basket-ball">
+			<label for="basket" class="form-check-label">Basket-ball</label>
+		</div>
+		<div class="mb-2">
+			<input type="checkbox" class="form-check-input" id="foot" name="2" value="Football">
+			<label for="foot">Football</label>
+		</div>
+		<div class="mb-2">
+			<input type="checkbox" class="form-check-input" id="hand" name="3" value="Handball">
+			<label for="hand">Handball</label>
+		</div>
+		<div class="mb-2">
+			<input type="checkbox" class="form-check-input" id="tennis" name="4" value="Tennis">
+			<label for="tennis">Tennis</label>
+		</div>
+		<div class="mb-4">
+			<input type="checkbox" class="form-check-input" id="rugby" name="5" value="Rugby">
+			<label for="rugby">Rugby</label>
+		</div>
+		<div>
+			<input type="submit" value="Valider" class="btn btn-primary">
+		</div>
+	</form>
 
-
-
-
+	<p class="text-center text-danger"><?= $err_msg ?? '' ?></p>
 
 <?php } ?>
 	
