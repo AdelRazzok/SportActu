@@ -1,6 +1,5 @@
 <?php
-if (isset($_COOKIE)) {
+if (isset($_COOKIE) && !empty($_COOKIE)) {
     $preferences = json_decode($_COOKIE['preferences'], true);
     $preferences = array_values($preferences);
-    var_dump($preferences);
-}
+} else header('Location: accueil.html');
