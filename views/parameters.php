@@ -24,13 +24,13 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="sujet.html">Sport1</a>
+						<a class="nav-link active" aria-current="page" href="sport-1.html"><?= $preferences[0] ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="sujet.html">Sport2</a>
+						<a class="nav-link active" href="sport-2.html"><?= $preferences[1] ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="sujet.html">Sport3</a>
+						<a class="nav-link active" href="sport-3.html"><?= $preferences[2] ?></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link active" href="parametre.html">Paramètres</a>
