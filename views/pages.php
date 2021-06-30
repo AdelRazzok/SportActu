@@ -19,23 +19,23 @@
     
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Sport Actu</a>
+    <a class="navbar-brand" href="../index.php">Sport Actu</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sport1</a>
+          <a class="nav-link active" aria-current="page" href="./pages.php">Sport1</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Sport2</a>
+          <a class="nav-link active" href="./pages.php">Sport2</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Sport3</a>
+          <a class="nav-link active" href="./pages.php">Sport3</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Paramètres</a>
+          <a class="nav-link active" href="./parameters.php">Paramètres</a>
         </li>
       </ul>
     </div>
