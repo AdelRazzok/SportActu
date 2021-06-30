@@ -24,16 +24,16 @@
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="./pages.php">Sport1</a>
+						<a class="nav-link active" aria-current="page" href="sujet.html">Sport1</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="./pages.php">Sport2</a>
+						<a class="nav-link active" href="sujet.html">Sport2</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="./pages.php">Sport3</a>
+						<a class="nav-link active" href="sujet.html">Sport3</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="./parameters.php">Paramètres</a>
+						<a class="nav-link active" href="parametre.html">Paramètres</a>
 					</li>
 				</ul>
 			</div>
@@ -43,23 +43,23 @@
 	<form action="parametre.html" method="post" class="d-flex flex-column align-items-center">
 		<label class="mt-5 mb-3">Vos catégories :</label>
 		<div class="mb-2 form-check">
-			<input type="checkbox" class="form-check-input" id="basket" name="1" value="basket">
+			<input type="checkbox" class="form-check-input" id="basket" name="1" value="Basket-ball">
 			<label for="basket" class="form-check-label">Basket-ball</label>
 		</div>
 		<div class="mb-2">
-			<input type="checkbox" class="form-check-input" id="foot" name="2" value="foot">
+			<input type="checkbox" class="form-check-input" id="foot" name="2" value="Football">
 			<label for="foot">Football</label>
 		</div>
 		<div class="mb-2">
-			<input type="checkbox" class="form-check-input" id="hand" name="3" value="hand">
+			<input type="checkbox" class="form-check-input" id="hand" name="3" value="Handball">
 			<label for="hand">Handball</label>
 		</div>
 		<div class="mb-2">
-			<input type="checkbox" class="form-check-input" id="tennis" name="4" value="tennis">
+			<input type="checkbox" class="form-check-input" id="tennis" name="4" value="Tennis">
 			<label for="tennis">Tennis</label>
 		</div>
 		<div class="mb-4">
-			<input type="checkbox" class="form-check-input" id="rugby" name="5" value="rugby">
+			<input type="checkbox" class="form-check-input" id="rugby" name="5" value="Rugby">
 			<label for="rugby">Rugby</label>
 		</div>
 		<div>

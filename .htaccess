@@ -15,4 +15,6 @@ RewriteRule ^accueil.html$ index.php [L]
 RewriteRule ^parametre.html$ /views/parameters.php [L]
 
 # pages.php -> sujet-x.html
-# RewriteRule ^sujet-([0-9]+).html$ /views/pages.php?sujet=$1
+RewriteRule ^sport-1.html$ /views/pages.php?sujet=0 [L]
+RewriteRule ^sport-2.html$ /views/pages.php?sujet=1 [L]
+RewriteRule ^sport-3.html$ /views/pages.php?sujet=2 [L]
