@@ -116,7 +116,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
 
 <?php } else {?>
-  <h1>Veuillez choisir vos préférences</h1>
+  <h1>Veuillez choisir vos 3 sports de préférence</h1>
 
 
 
