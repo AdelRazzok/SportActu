@@ -13,26 +13,31 @@ $xmlArray = [
     $xml0 = simplexml_load_file($xmlArray[$preferences[0]]);
     $xml1 = simplexml_load_file($xmlArray[$preferences[1]]);
     $xml2 = simplexml_load_file($xmlArray[$preferences[2]]);
+
+    GetInfoFromXml($xml0);
+    GetInfoFromXml($xml1);
+    GetInfoFromXml($xml2);
   }
   
-  GetInfoFromXml($xml0);
-  GetInfoFromXml($xml1);
-  GetInfoFromXml($xml2);
+
   
   function GetInfoFromXml($xml)
   {
     foreach ($xml->channel->item as $itm) {
       $link = $itm->link;
-      echo "$link<br>";
-      $title = $itm->title;////////////////title
-      echo "$title<br>";
+      $title = $itm->title;
       $descstring = $itm->description;
       $descArray = explode('<br /><br />', $descstring);
-      $desc = $descArray[0];////////////////description
-      echo "$desc<br>";
-      $img = $itm->enclosure['url'];////////////////img src
-      echo '<img src="'.$img.'" ><br>';
-      $time = $itm->pubDate;////////////////pulication date
-      echo "$time<br><br>";
+      $desc = $descArray[0];
+      $img = $itm->enclosure['url'];
+      $time = $itm->pubDate;
     }
   }
+
+  if (isset($_POST) && count($_POST) != 0) {
+    if (count($_POST) == 3) {
+        $preferences = json_encode($_POST);
+        setcookie('preferences', $preferences, time() + 86400);
+        header("Refresh:0");
+    } else $err_msg = 'Veuillez sélectionner 3 catégories';
+}
