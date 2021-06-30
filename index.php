@@ -35,7 +35,7 @@
           <a class="nav-link active" href="./views/pages.php">Sport3</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="./views/pages.php">Paramètres</a>
+          <a class="nav-link active" href="../parametre.html">Paramètres</a>
         </li>
       </ul>
     </div>

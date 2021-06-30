@@ -1,0 +1,15 @@
+# ----- Config
+
+# Suivi des liens symboliques
+Options +FollowSymlinks
+
+# Activation de la réécriture d'URL
+RewriteEngine on
+
+# ----- Rewrite Rules
+
+# index.php -> accueil.html
+RewriteRule ^accueil.html$ index.php [L]
+
+# parameters.php -> parametre.html
+RewriteRule ^parametre.html$ /views/parameters.php [L]
