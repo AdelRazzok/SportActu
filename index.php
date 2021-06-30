@@ -1,12 +1,6 @@
-<?php
-
-
-
-
-?>
-
+<?php require './controllers/index-controller.php' ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
 
 <head>
 	<meta charset="UTF-8">
@@ -15,7 +9,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link href="./assets/style/style.css" rel="stylesheet">
-	<title>Document</title>
+	<title>Sport Actu</title>
 </head>
 
 <body>
