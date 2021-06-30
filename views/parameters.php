@@ -26,16 +26,16 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Sport1</a>
+          <a class="nav-link active" aria-current="page" href="./pages.php">Sport1</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Sport2</a>
+          <a class="nav-link active" href="./pages.php">Sport2</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Sport3</a>
+          <a class="nav-link active" href="./pages.php">Sport3</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="#">Paramètres</a>
+          <a class="nav-link active" href="./parameters.php">Paramètres</a>
         </li>
       </ul>
     </div>
