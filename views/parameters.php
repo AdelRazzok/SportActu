@@ -17,7 +17,7 @@
 </head>
 <body>
     
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light test">
   <div class="container-fluid">
     <a class="navbar-brand" href="../accueil.html">Sport Actu</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,19 +42,15 @@
   </div>
 </nav>
 
+<H1>test
+
+</H1>
+<button onclick="document.documentElement.classList.toggle('dark-mode-activated')">cliquez sur ce bouton&nbsp;!</button>
 
 
-
-
-
-
-
-
-
-
-
-
-
+<div id="scroll_to_top">
+    <a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop"/></a>
+</div>
 
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
