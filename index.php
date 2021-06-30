@@ -1,6 +1,12 @@
 <?php
 
-
+if (isset($_COOKIE)) {
+  $preferences = json_decode($_COOKIE['preferences'], true);
+  $preferences = array_values($preferences);
+$sport1 = $preferences[0];
+$sport2 = $preferences[1];
+$sport3 = $preferences[2];
+}
 
 
 ?>
@@ -26,13 +32,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="./views/pages.php">Sport1</a>
+          <a class="nav-link active" aria-current="page" href="./views/pages.php"><?= $sport1 ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="./views/pages.php">Sport2</a>
+          <a class="nav-link active" href="./views/pages.php"><?= $sport2 ?></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="./views/pages.php">Sport3</a>
+          <a class="nav-link active" href="./views/pages.php"><?= $sport3 ?></a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="../parametre.html">Paramètres</a>

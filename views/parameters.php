@@ -1,4 +1,11 @@
-<?php require '../controllers/parameters-controller.php' ?>
+<?php require '../controllers/parameters-controller.php' 
+
+
+
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +75,15 @@
 	</form>
 
 	<p class="text-center text-danger"><?= $err_msg ?? '' ?></p>
+
+
+    </H1>
+<button onclick="document.documentElement.classList.toggle('dark-mode-activated')">cliquez sur ce bouton&nbsp;!</button>
+
+
+<div id="scroll_to_top">
+    <a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop"/></a>
+</div>
 
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
