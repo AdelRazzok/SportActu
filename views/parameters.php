@@ -1,11 +1,4 @@
-<?php require '../controllers/parameters-controller.php' 
-
-
-
-
-
-
-?>
+<?php require '../controllers/parameters-controller.php' ?>
 
 <!DOCTYPE html>
 <html lang="en">
