@@ -1,47 +1,21 @@
 .shadow {
-    box-shadow: 0 10px 30px 0px rgb(0, 0, 0, 0.1);
+  box-shadow: 0 10px 30px 0px rgb(0, 0, 0, 0.1);
 }
 
+.dark-mode-activated body {
+  background-color: #1c1c1e;
+  color: #fefefe;
+}
 
-    .dark-mode-activated body{
-        background-color: #1c1c1e;
-        color: #fefefe;
-    }
+#scroll_to_top {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  bottom: 50px;
+  right: 30px;
+  background-color: Transparent;
+}
 
-
-    #scroll_to_top {
-        position: fixed;
-        width: 25px;
-        height: 25px;
-        bottom: 50px;
-        right: 30px;
-        background-color: Transparent;
-      }
-      #scroll_to_top img {
-        width: 45px;
-      } 
-
-
-/* 
-    @media (prefers-color-scheme: dark) {
-
-        html {
-          filter: invert(1) hue-rotate(.5turn);
-        }
-      
-        img {
-          filter: invert(1) hue-rotate(.5turn);
-        }
-      
-        img:not(:hover) {
-          opacity: .7;
-          transition: opacity .25s ease-in-out;
-        }
-      } */
-
-
-
-      /* body {
-        background-color: #1c1c1e;
-        color: #fefefe;
-        } */
+#scroll_to_top img {
+  width: 45px;
+}

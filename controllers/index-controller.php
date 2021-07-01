@@ -19,7 +19,6 @@ if (isset($_COOKIE['preferences'])) {
     GetInfoFromXml($xml1,$articles);
     GetInfoFromXml($xml2,$articles);
 
-    // var_dump($articles);
     $keysArray = [];
     foreach ($articles as $key => $value) {
         array_push($keysArray, $key);
@@ -30,7 +29,6 @@ if (isset($_COOKIE['preferences'])) {
     foreach ($keysArray as $key => $value) {
         array_push($articlesSorted, $articles[$value]);
     }
-    var_dump($articlesSorted);
 
    $image1 = GetImgFromXml($xml0);
    $image2 = GetImgFromXml($xml1);
