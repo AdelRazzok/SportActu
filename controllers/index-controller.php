@@ -16,7 +16,50 @@ if (isset($_COOKIE['preferences'])) {
     GetInfoFromXml($xml0);
     GetInfoFromXml($xml1);
     GetInfoFromXml($xml2);
+
+    // GetImgFromXml($xml2);
+    // var_dump($img);
+
 }
+
+
+
+if (isset($_COOKIE['preferences'])) {
+    function GetImgFromXml($xml) {    
+    foreach ($xml->channel->item as $itm) {
+        // $link = $itm->link;
+        // $title = $itm->title;
+        // $descstring = $itm->description;
+        // $descArray = explode('<br /><br />', $descstring);
+        // $desc = $descArray[0];
+        $img = $itm->enclosure['url'];
+        $time = date('Y-m-d H:i:s',strtotime($itm->pubDate.'+2'));  
+        echo $img;
+    }    
+}GetImgFromXml($xml0);
+}
+
+
+
+
+
+// function GetImgFromXml($xml) {
+//     foreach ($xml->channel->item as $itm) {
+//         // $link = $itm->link;
+//         // $title = $itm->title;
+//         // $descstring = $itm->description;
+//         // $descArray = explode('<br /><br />', $descstring);
+//         // $desc = $descArray[0];
+//         $img = $itm->enclosure['url'];
+//         $time = date('Y-m-d H:i:s',strtotime($itm->pubDate.'+2'));
+
+        
+//     }
+// }
+
+
+
+
   
 function GetInfoFromXml($xml) {
     foreach ($xml->channel->item as $itm) {
@@ -26,9 +69,13 @@ function GetInfoFromXml($xml) {
         $descArray = explode('<br /><br />', $descstring);
         $desc = $descArray[0];
         $img = $itm->enclosure['url'];
-        $time = $itm->pubDate;
+        $time = date('Y-m-d H:i:s',strtotime($itm->pubDate.'+2'));
+
+        // var_dump($img);
     }
 }
+
+
 
 if (isset($_POST) && count($_POST) != 0) {
     if (count($_POST) == 3) {
