@@ -8,6 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<link href="./assets/style/style.css" rel="stylesheet">
 	<title>Sport Actu</title>
 </head>
@@ -63,6 +64,40 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 	</div>
 
 	<div id="scroll_to_top" class="d-none d-md-block">
+		
+	<div class="d-grid">
+		<div class="row">
+			<?php
+			for ($i=4; $i < 4+$maxArticle; $i++) {
+				$sportCard = $articlesSorted[$i]['sport'];
+				$linkCard = $articlesSorted[$i]['link'];
+				$titleCard = $articlesSorted[$i]['title'];
+				$descCard = $articlesSorted[$i]['desc'];
+				$imgCard = $articlesSorted[$i]['img'];
+				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
+		
+			<div class="col-md-4">
+				<div class="card mb-3" style="max-width: 540px;">
+					<div class="row g-0">
+						<div class="col-4">
+							<img src="<?= $imgCard ?>" class="img-fluid rounded-start" alt="...">
+						</div>
+						<div class="col-8">
+							<div class="card-body">
+							<h5 class="card-title fs-6"><?= $titleCard ?></h5>
+							<p class="card-text"><?= $descCard ?></p>
+							<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i> <?= $timeCard ?></small></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<?php } ?>
+		</div>
+	</div>
+
+
+	<div id="scroll_to_top">
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
 	</div>
 
@@ -113,6 +148,30 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 			<input type="checkbox" class="form-check-input" id="rugby" name="5" value="Rugby">
 			<label for="rugby">Rugby</label>
 		</div>
+
+		<p>Nombre d'articles :</p>
+
+		<div class="d-flex mb-4">
+			<div>
+				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="6">
+				<label class="form-check-label" for="maxArticle">
+					6
+				</label>
+			</div>
+			<div class="mx-3">
+				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="9" checked>
+				<label class="form-check-label" for="maxArticle">
+					9
+				</label>
+			</div>
+			<div>
+				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="12">
+				<label class="form-check-label" for="maxArticle">
+					12
+				</label>
+			</div>
+		</div>
+
 		<div>
 			<input type="submit" value="Valider" class="btn btn-primary">
 		</div>

@@ -10,6 +10,7 @@ $xmlArray = [
 if (isset($_COOKIE['preferences'])) {
     $preferences = json_decode($_COOKIE['preferences'],true);
     $preferences = array_values($preferences);
+    $maxArticle = $preferences[3];
     $xml0 = simplexml_load_file($xmlArray[$preferences[0]]);
     $xml0Sport = $preferences[0];
     $xml1 = simplexml_load_file($xmlArray[$preferences[1]]);
@@ -62,7 +63,7 @@ function GetInfoFromXml($xml,&$articles,&$xmlsport) {
 }
 
 if (isset($_POST) && count($_POST) != 0) {
-    if (count($_POST) == 3) {
+    if (count($_POST) == 4) {
         $preferences = json_encode($_POST);
         setcookie('preferences', $preferences, time() + 86400);
         header("Refresh:0");
