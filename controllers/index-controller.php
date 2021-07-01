@@ -11,15 +11,17 @@ if (isset($_COOKIE['preferences'])) {
     $preferences = json_decode($_COOKIE['preferences'],true);
     $preferences = array_values($preferences);
     $xml0 = simplexml_load_file($xmlArray[$preferences[0]]);
+    $xml0Sport = $preferences[0];
     $xml1 = simplexml_load_file($xmlArray[$preferences[1]]);
+    $xml1Sport = $preferences[1];
     $xml2 = simplexml_load_file($xmlArray[$preferences[2]]);
+    $xml2Sport = $preferences[2];
     $articles = [];
 
-    GetInfoFromXml($xml0,$articles);
-    GetInfoFromXml($xml1,$articles);
-    GetInfoFromXml($xml2,$articles);
+    GetInfoFromXml($xml0,$articles,$xml0Sport);
+    GetInfoFromXml($xml1,$articles,$xml1Sport);
+    GetInfoFromXml($xml2,$articles,$xml2Sport);
 
-    // var_dump($articles);
     $keysArray = [];
     foreach ($articles as $key => $value) {
         array_push($keysArray, $key);
@@ -30,7 +32,6 @@ if (isset($_COOKIE['preferences'])) {
     foreach ($keysArray as $key => $value) {
         array_push($articlesSorted, $articles[$value]);
     }
-    var_dump($articlesSorted);
 
    $image1 = GetImgFromXml($xml0);
    $image2 = GetImgFromXml($xml1);
@@ -46,8 +47,9 @@ if (isset($_COOKIE['preferences'])) {
     
 }
   
-function GetInfoFromXml($xml,&$articles) {
+function GetInfoFromXml($xml,&$articles,&$xmlsport) {
     foreach ($xml->channel->item as $itm) {
+        $sport = $xmlsport;
         $link = $itm->link;
         $title = $itm->title;
         $descstring = $itm->description;
@@ -55,8 +57,7 @@ function GetInfoFromXml($xml,&$articles) {
         $desc = $descArray[0];
         $img = $itm->enclosure['url'];
         $time = date('Y-m-d H:i:s',strtotime($itm->pubDate.'+2'));
-        // var_dump($time);
-        $articles[strtotime($time)] = ['link'=>strval($link),'title'=>strval($title),'desc'=>strval($desc),'img'=>strval($img),'time'=>$time];
+        $articles[strtotime($time)] = ['sport'=>strval($sport),'link'=>strval($link),'title'=>strval($title),'desc'=>strval($desc),'img'=>strval($img),'time'=>$time];
     }
 }
 
