@@ -19,6 +19,7 @@
 	<?php 
 if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
+
 	<div id="carouselExampleCaptions" class="carousel slide mt-3 shadow" data-bs-ride="carousel">
 		<div class="carousel-indicators">
 			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -63,7 +64,6 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 		</button>
 	</div>
 
-	<div id="scroll_to_top" class="d-none d-md-block">
 		
 	<div class="d-grid">
 		<div class="row">
@@ -97,7 +97,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 	</div>
 
 
-	<div id="scroll_to_top">
+	<div id="scroll_to_top" class="d-none d-md-block">
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
 	</div>
 
@@ -180,7 +180,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 	<p class="text-center text-danger"><?= $err_msg ?? '' ?></p>
 
 	<?php } ?>
-
+	
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
