@@ -13,12 +13,19 @@ if (isset($_COOKIE['preferences'])) {
     $xml0 = simplexml_load_file($xmlArray[$preferences[0]]);
     $xml1 = simplexml_load_file($xmlArray[$preferences[1]]);
     $xml2 = simplexml_load_file($xmlArray[$preferences[2]]);
-    GetInfoFromXml($xml0);
-    GetInfoFromXml($xml1);
-    GetInfoFromXml($xml2);
+    $articles = [];
+
+    GetInfoFromXml($xml0,$articles);
+    GetInfoFromXml($xml1,$articles);
+    GetInfoFromXml($xml2,$articles);
+
+    var_dump($articles);
+    foreach ($articles as $key => $value) {
+        echo strtotime($key).'<br>';
+    }
 }
   
-function GetInfoFromXml($xml) {
+function GetInfoFromXml($xml,&$articles) {
     foreach ($xml->channel->item as $itm) {
         $link = $itm->link;
         $title = $itm->title;
@@ -26,7 +33,9 @@ function GetInfoFromXml($xml) {
         $descArray = explode('<br /><br />', $descstring);
         $desc = $descArray[0];
         $img = $itm->enclosure['url'];
-        $time = $itm->pubDate;
+        $time = date('Y-m-d H:i:s',strtotime($itm->pubDate.'+2'));
+        // var_dump($time);
+        $articles[$time] = ['link'=>strval($link),'title'=>strval($title),'desc'=>strval($desc),'img'=>strval($img)];
     }
 }
 
