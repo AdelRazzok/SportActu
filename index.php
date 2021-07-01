@@ -63,8 +63,6 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 		</button>
 	</div>
 
-	<div id="scroll_to_top" class="d-none d-md-block">
-		
 	<div class="d-grid">
 		<div class="row">
 			<?php
@@ -97,7 +95,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 	</div>
 
 
-	<div id="scroll_to_top">
+	<div id="scroll_to_top" class="d-none d-md-block">
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
 	</div>
 
