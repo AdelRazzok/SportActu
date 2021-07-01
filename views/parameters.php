@@ -96,6 +96,28 @@
 
 	<button onclick="document.documentElement.classList.toggle('dark-mode-activated')">cliquez sur ce bouton&nbsp;!</button>
 
+	<footer class="footer fixed-bottom d-flex flex-column align-items-center">
+		<div class="row">
+			<div class="col-4">
+				<a href="sport-1.html"><?= $preferences[0] ?></a>
+			</div>
+			<div class="col-4">
+				<a href="sport-2.html"><?= $preferences[1] ?></a>
+			</div>
+			<div class="col-4">
+				<a href="sport-3.html"><?= $preferences[2] ?></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<a href="accueil.html">Accueil</a>
+			</div>
+			<div class="col-6">
+				<a href="parametre.html">Paramètres</a>
+			</div>
+		</div>
+	</footer>
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
 	</script>
