@@ -14,5 +14,8 @@ RewriteRule ^accueil.html$ index.php [L]
 # parameters.php -> parametre.html
 RewriteRule ^parametre.html$ /views/parameters.php [L]
 
-# pages.php -> sujet-x.html
+# pages.php?sujet=x -> sport-x.html
 RewriteRule ^sport-([0-9]+).html$ /views/pages.php?sujet=$1 [L]
+
+# Erreur 404
+ErrorDocument 404 /404.php
