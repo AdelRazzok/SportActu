@@ -19,10 +19,20 @@ if (isset($_COOKIE['preferences'])) {
     GetInfoFromXml($xml1,$articles);
     GetInfoFromXml($xml2,$articles);
 
-    var_dump($articles);
+    // var_dump($articles);
+    $keysArray = [];
     foreach ($articles as $key => $value) {
-        echo strtotime($key).'<br>';
+        array_push($keysArray, $key);
     }
+    rsort($keysArray);
+
+    $articlesSorted = [];
+    foreach ($keysArray as $key => $value) {
+        array_push($articlesSorted, $articles[$value]);
+    }
+    var_dump($articlesSorted);
+
+    
 }
   
 function GetInfoFromXml($xml,&$articles) {
@@ -35,7 +45,7 @@ function GetInfoFromXml($xml,&$articles) {
         $img = $itm->enclosure['url'];
         $time = date('Y-m-d H:i:s',strtotime($itm->pubDate.'+2'));
         // var_dump($time);
-        $articles[$time] = ['link'=>strval($link),'title'=>strval($title),'desc'=>strval($desc),'img'=>strval($img)];
+        $articles[strtotime($time)] = ['link'=>strval($link),'title'=>strval($title),'desc'=>strval($desc),'img'=>strval($img),'time'=>$time];
     }
 }
 
