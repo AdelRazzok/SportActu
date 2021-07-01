@@ -71,6 +71,28 @@
 
     <?php } ?>
 
+	<footer class="footer fixed-bottom d-flex flex-column align-items-center">
+		<div class="row">
+			<div class="col-4">
+				<a href="sport-1.html"><?= $preferences[0] ?></a>
+			</div>
+			<div class="col-4">
+				<a href="sport-2.html"><?= $preferences[1] ?></a>
+			</div>
+			<div class="col-4">
+				<a href="sport-3.html"><?= $preferences[2] ?></a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<a href="accueil.html">Accueil</a>
+			</div>
+			<div class="col-6">
+				<a href="parametre.html">Paramètres</a>
+			</div>
+		</div>
+	</footer>
+
 	<div id="scroll_to_top" class="d-none d-md-block">
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
 	</div>
