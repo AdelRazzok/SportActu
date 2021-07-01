@@ -1,7 +1,7 @@
 <?php require '../controllers/parameters-controller.php' ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr" dir="ltr">
 
 <head>
 	<meta charset="UTF-8">
@@ -40,7 +40,7 @@
 		</div>
 	</nav>
 
-	<form action="parametre.html" method="post" class="d-flex flex-column align-items-center">
+	<form action="parametre.html" method="post" class="d-flex flex-column align-items-center mb-3">
 		<label class="mt-5 mb-3">Vos catégories :</label>
 		<div class="mb-2 form-check">
 			<input type="checkbox" class="form-check-input" id="basket" name="1" value="Basket-ball">
@@ -58,26 +58,43 @@
 			<input type="checkbox" class="form-check-input" id="tennis" name="4" value="Tennis">
 			<label for="tennis">Tennis</label>
 		</div>
-		<div class="mb-4">
+		<div class="mb-5">
 			<input type="checkbox" class="form-check-input" id="rugby" name="5" value="Rugby">
 			<label for="rugby">Rugby</label>
 		</div>
+
+		<p>Nombre d'articles :</p>
+
+		<div class="d-flex mb-4">
+			<div>
+				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="6">
+				<label class="form-check-label" for="maxArticle">
+					6
+				</label>
+			</div>
+			<div class="mx-3">
+				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="9" checked>
+				<label class="form-check-label" for="maxArticle">
+					9
+				</label>
+			</div>
+			<div>
+				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="12">
+				<label class="form-check-label" for="maxArticle">
+					12
+				</label>
+			</div>
+		</div>
+
 		<div>
-			<input type="submit" value="Valider" class="btn btn-primary">
+			<input type="submit" value="Appliquer" class="btn btn-primary">
 		</div>
 	</form>
 
 	<p class="text-center text-danger"><?= $err_msg ?? '' ?></p>
+	<p class="text-center text-success"><?= $success_msg ?? '' ?></p>
 
-
-    </H1>
-<button onclick="document.documentElement.classList.toggle('dark-mode-activated')">cliquez sur ce bouton&nbsp;!</button>
-
-
-<div id="scroll_to_top">
-    <a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop"/></a>
-</div>
-
+	<button onclick="document.documentElement.classList.toggle('dark-mode-activated')">cliquez sur ce bouton&nbsp;!</button>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
