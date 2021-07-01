@@ -8,8 +8,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-	<link href="./assets/style/style.css" rel="stylesheet">
-	<title>Sport Actu - <?= $preferences[$_GET['sujet'] - 1] ?></title> 
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+		<link href="./assets/style/style.css" rel="stylesheet">
+	<title>Sport Actu - <?= $preferences[$_GET['sujet'] - 1] ?></title>
 </head>
 
 <body>
@@ -39,20 +40,38 @@
 		</div>
 	</nav>
 
+	<h1 class="display-5 text-center my-3"><?= $preferences[$_GET['sujet'] - 1] ?? '' ?></h1>
 
+	<hr>
 
+	<?php foreach ($xml->channel->item as $itm) {
+        $sport = $xmlSport;
+        $link = $itm->link;
+        $title = $itm->title;
+        $descstring = $itm->description;
+        $descArray = explode('<br /><br />', $descstring);
+        $desc = $descArray[0];
+        $img = $itm->enclosure['url'];
+        $time = date('d/m/Y H:i',strtotime($itm->pubDate.'+2')); ?>
 
+		<div class="card mb-3" style="max-width: 540px;">
+			<div class="row g-0">
+				<div class="col-4">
+					<img src="<?= $img ?>"class="img-fluid rounded-start" alt="...">
+				</div>
+				<div class="col-8">
+					<div class="card-body">
+					<h5 class="card-title fs-6"><?= $title ?></h5>
+					<p class="card-text"><?= $desc ?></p>
+					<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i> <?= $time ?></small></p>
+					</div>
+				</div>
+			</div>
+		</div>
 
+    <?php } ?>
 
-
-
-
-
-
-
-
-
-	<div id="scroll_to_top">
+	<div id="scroll_to_top" class="d-none d-md-block">
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
 	</div>
 
