@@ -22,33 +22,25 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
 
 	<div id="carouselExampleCaptions" class="carousel slide mt-3 shadow" data-bs-ride="carousel">
-		<div class="carousel-indicators">
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-				aria-current="true" aria-label="Slide 1"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-				aria-label="Slide 2"></button>
-			<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-				aria-label="Slide 3"></button>
-		</div>
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="<?= $image1 ?? "#" ?>" class="d-block w-100" alt="...">
-				<div class="carousel-caption">
-					<h5><?= $Title1 ?? "" ?></h5>
+				<div class="carousel-caption text-start carouselTitle">
+					<a href="<?= $Link1 ?>" class="text-white"><h5 class="fs-6"><?= $Title1 ?? "" ?></h5></a>
 					<p class="d-none d-md-block"><?= $Desc1 ?? "" ?></p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="<?= $image2 ?? "#" ?>" class="d-block w-100" alt="...">
-				<div class="carousel-caption">
-					<h5><?= $Title2 ?? "" ?></h5>
+				<div class="carousel-caption text-start carouselTitle">
+					<a href="<?= $Link2 ?>" class="text-white"><h5 class="fs-6"><?= $Title2 ?? "" ?></h5></a>
 					<p class="d-none d-md-block"><?= $Desc2 ?? "" ?></p>
 				</div>
 			</div>
 			<div class="carousel-item">
 				<img src="<?= $image3 ?? "#" ?>" class="d-block w-100" alt="...">
-				<div class="carousel-caption">
-					<h5><?= $Title3 ?? "" ?></h5>
+				<div class="carousel-caption text-start carouselTitle">
+					<a href="<?= $Link3 ?>" class="text-white"><h5 class="fs-6"><?= $Title3 ?? "" ?></h5></a>
 					<p class="d-none d-md-block"><?= $Desc3 ?? "" ?></p>
 				</div>
 			</div>
