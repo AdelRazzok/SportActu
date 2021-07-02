@@ -63,7 +63,7 @@
 				<div class="col-8">
 					<div class="card-body">
 					<h5 class="card-title"><?= $title ?></h5>
-					<p class="card-text"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
+					<p class="card-text"><?= $desc . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
 					<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i> <?= $time ?></small></p>
 					</div>
 				</div>
