@@ -120,27 +120,30 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
 	</div>
 
-	<footer class="footer fixed-bottom d-flex flex-column align-items-center">
-		<div class="row">
-			<div class="col-4">
-				<a href="sport-1.html"><?= $preferences[0] ?></a>
+	<div class="container-fluid p-0 m-0 fixed-bottom">
+
+		<div class="row bg-success">
+			<div class="col-4 text-center">
+				<a href="sport-1.html"><?= $svgArray[$preferences[0]] ?></a>
 			</div>
-			<div class="col-4">
-				<a href="sport-2.html"><?= $preferences[1] ?></a>
+			<div class="col-4 text-center">
+				<a href="sport-2.html"><?= $svgArray[$preferences[1]] ?></a>
 			</div>
-			<div class="col-4">
-				<a href="sport-3.html"><?= $preferences[2] ?></a>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-6">
-				<a href="accueil.html">Accueil</a>
-			</div>
-			<div class="col-6">
-				<a href="parametre.html">Paramètres</a>
+			<div class="col-4 text-center">
+				<a href="sport-3.html"><?= $svgArray[$preferences[2]] ?></a>
 			</div>
 		</div>
-	</footer>
+
+		<div class="row bg-warning">
+			<div class="col-6 text-center">
+				<a href="accueil.html"><img src="./assets/img/newspaper.svg" alt="home" height="30px" width="30px"></a>
+			</div>
+			<div class="col-6 text-center">
+				<a href="parametre.html"><img src="./assets/img/sliders.svg" alt="home" height="30px" width="30px"></a>
+			</div>
+		</div>
+		</div>
+
 
 	<?php } else {?>
 	<h1 class="text-center">Veuillez choisir vos 3 sports de préférence</h1>

@@ -13,8 +13,8 @@ $xmlArray = [
     xmlns:svg="http://www.w3.org/2000/svg"
     xmlns="http://www.w3.org/2000/svg"
     version="1.0"
-    width="300"
-    height="300"
+    width="60px"
+    height="60px"
     viewBox="0 0 300 300"
     id="svg2243">
    <defs
@@ -60,7 +60,7 @@ $xmlArray = [
       id="path2273" />
  </svg>',
     'Football'=>'<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    width="60px" height="60px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
 <path d="M120.163,79.848c13.524,1.706,27.135,3.15,40.786,2.92c6.136,0.008,12.645,0.205,18.295-2.561
    c3.264-2.302,6.336-6.75,4.238-10.794c-2.514-4.375-7.617-6.611-12.402-7.435c-10.658-0.759-21.28,0.821-31.893,1.574
    c-17.685,1.791-35.369,3.786-53.137,4.463c-10.848,1.287-21.983,1.338-32.54,4.277c1.434,0.517,2.92,0.902,4.445,1.015
@@ -85,7 +85,7 @@ $xmlArray = [
 <circle cx="220.968" cy="50.342" r="22"/>
 </svg>',
     'Tennis'=>'<svg version="1.0" xmlns="http://www.w3.org/2000/svg"
-    width="240.000000pt" height="240.000000pt" viewBox="0 0 240.000000 240.000000"
+    width="60px" height="60px" viewBox="0 0 240.000000 240.000000"
     preserveAspectRatio="xMidYMid meet">
    <metadata>
    Created by potrace 1.15, written by Peter Selinger 2001-2017
@@ -116,7 +116,7 @@ $xmlArray = [
    </g>
    </svg>',
     'Handball'=>'<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-    width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    width="60px" height="60px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
 <path d="M169.021,7.917c8.479,0,15.354,6.874,15.354,15.354s-6.874,15.354-15.354,15.354c-8.48,0-15.354-6.874-15.354-15.354
    S160.541,7.917,169.021,7.917 M169.021,13.917c-5.158,0-9.354,4.196-9.354,9.354s4.196,9.354,9.354,9.354
    c5.156,0,9.354-4.196,9.354-9.354S174.179,13.917,169.021,13.917L169.021,13.917z"/>
@@ -142,7 +142,7 @@ $xmlArray = [
     'Rugby'=>'<svg version="1.1"
     xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;" i:viewOrigin="156.5 545.5" i:rulerOrigin="0 0" i:pageBounds="0 792 612 0"
     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
-    x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
+    x="0px" y="0px" width="60px" height="60px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
 <metadata><?xpacket begin="﻿" id="W5M0MpCehiHzreSzNTczkc9d"?>
 <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 4.1-c036 46.277092, Fri Feb 23 2007 14:17:08        ">
   <rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
@@ -364,4 +364,5 @@ function ResizeDesc($desc) {
 
     return $desc;
 }
+
 
