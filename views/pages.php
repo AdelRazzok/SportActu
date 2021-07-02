@@ -9,6 +9,7 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<link href="./assets/style/style.css" rel="stylesheet">
 	<title>Sport Actu - <?= $preferences[$_GET['sujet'] - 1] ?></title>
 </head>
@@ -54,7 +55,7 @@
         $img = $itm->enclosure['url'];
         $time = date('d/m/Y H:i',strtotime($itm->pubDate.'+2')); ?>
 
-		<div class="card mb-3" style="max-width: 540px;">
+		<div data-aos="fade-right" class="card mb-3" style="max-width: 540px;">
 			<div class="row g-0">
 				<div class="col-4">
 					<img src="<?= $img ?>"class="img-fluid rounded-start" alt="...">
@@ -99,6 +100,10 @@
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+	</script>
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<script>
+		AOS.init();
 	</script>
 </body>
 
