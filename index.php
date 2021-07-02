@@ -113,7 +113,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 	</div>
 
 	<div id="scroll_to_top" class="d-none d-md-block">
-		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
+		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop"></a>
 	</div>
 
 	<?php require './views/footer.php' ?>

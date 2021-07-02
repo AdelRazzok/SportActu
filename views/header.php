@@ -1,11 +1,15 @@
 <div class="container-fluid p-0 m-0" style="overflow: hidden;">
-	<div class="row bg-success">
+	<div class="row">
 		<div class="col-6">
-			<a href="sport-1.html"><?= $svgArray[$preferences[0]] ?></a>
+			<a><img src="/assets/img/SoSport_logo_dark2.png" alt="logo" width="120px" class="p-2"></a>
 		</div>
-		<div class="form-check form-switch col-6 text-center d-flex flex-column align-items-center bg-warning">
-			<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked" checked>
-			<label class="form-check-label" for="flexSwitchCheckChecked">Dark mode</label>
+		<div class="col-6 d-flex align-items-center justify-content-end">
+		<i class="bi bi-brightness-high me-2"></i>
+		<div class="form-check form-switch">
+		<input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+		</div>		
+		<i class="bi bi-moon me-3"></i>
 		</div>
+
 	</div>
 </div>
