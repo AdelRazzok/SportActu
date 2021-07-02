@@ -64,7 +64,6 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 		</button>
 	</div>
 
-		
 	<div class="d-grid">
 		<div class="row">
 			<?php
@@ -73,6 +72,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 				$linkCard = $articlesSorted[$i]['link'];
 				$titleCard = $articlesSorted[$i]['title'];
 				$descCard = $articlesSorted[$i]['desc'];
+				$descCard = reduc($descCard);
 				$imgCard = $articlesSorted[$i]['img'];
 				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
 		

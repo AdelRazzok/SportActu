@@ -82,5 +82,25 @@ function GetDescFromXml($xml) {
     $descstring = $xml->channel->item->description;
     $descArray = explode('<br /><br />', $descstring);
     $desc = $descArray[0];
+    
+    
+    return $desc;
+}
+
+function reduc($desc) {   
+$nbr_caracteres_maximum = 30;
+    $nbr_caracteres = strlen($desc);
+
+    $point="...";
+
+
+    if($nbr_caracteres >= $nbr_caracteres_maximum)
+    {
+        $desc = mb_substr($desc, 0, $nbr_caracteres_maximum, 'UTF-8');
+    }
+    else
+    {
+        $desc;
+    }
     return $desc;
 }
