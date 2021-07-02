@@ -82,19 +82,16 @@ function GetDescFromXml($xml) {
     $descstring = $xml->channel->item->description;
     $descArray = explode('<br /><br />', $descstring);
     $desc = $descArray[0];
-    
-    
     return $desc;
 }
 
-function reduc($desc) {   
-$nbr_caracteres_maximum = 70;
+function ResizeDesc($desc) {   
+    $nbr_caracteres_maximum = 100;
     $nbr_caracteres = strlen($desc);
+
     if($nbr_caracteres >= $nbr_caracteres_maximum) {
-        $desc = mb_substr($desc, 0, $nbr_caracteres_maximum, 'UTF-8') . "...";
+        $desc = mb_substr($desc, 0, $nbr_caracteres_maximum, 'UTF-8') . '...';
     }
-    else
-    {
-        $desc;
-    }
-    return $desc;}
+
+    return $desc;
+}

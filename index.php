@@ -73,10 +73,10 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 				$linkCard = $articlesSorted[$i]['link'];
 				$titleCard = $articlesSorted[$i]['title'];
 				$descCard = $articlesSorted[$i]['desc'];
-				$descCard = reduc($descCard);
+				$descCard = ResizeDesc($descCard);
 				$imgCard = $articlesSorted[$i]['img'];
 				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
-		
+
 			<div class="col-md-4">
 				<div data-aos="fade-right" class="card mb-3" style="max-width: 540px;">
 					<div class="row g-0">
@@ -85,9 +85,10 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 						</div>
 						<div class="col-8">
 							<div class="card-body">
-							<h5 class="card-title fs-6"><?= $titleCard ?></h5>
-							<p class="card-text"><?= $descCard ?></p>
-							<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i> <?= $timeCard ?></small></p>
+								<h5 class="card-title fs-6"><?= $titleCard ?></h5>
+								<p class="card-text"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
+								<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i>
+										<?= $timeCard ?></small></p>
 							</div>
 						</div>
 					</div>
@@ -97,6 +98,24 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 		</div>
 	</div>
 
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					...
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					<button type="button" class="btn btn-primary">Save changes</button>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div id="scroll_to_top" class="d-none d-md-block">
 		<a href="#top"><img src="/assets/img/up-arrow.svg" alt="ReturnTop" /></a>
@@ -181,7 +200,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 	<p class="text-center text-danger"><?= $err_msg ?? '' ?></p>
 
 	<?php } ?>
-	
+
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
