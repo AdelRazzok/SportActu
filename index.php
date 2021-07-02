@@ -20,8 +20,7 @@
 	<?php 
 if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
-
-<div class="container-fluid p-0 m-0 sticky-top">
+	<div class="container-fluid p-0 m-0 sticky-top">
 		<div class="row bg-success">
 			<div class="col-4 text-center">
 				<a href="sport-1.html"><?= $svgArray[$preferences[0]] ?></a>
@@ -33,9 +32,9 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 				<a href="sport-3.html"><?= $svgArray[$preferences[2]] ?></a>
 			</div>
 		</div>
-		</div>
+	</div>
 
-	<div id="carouselExampleCaptions" class="carousel slide mt-3 shadow" data-bs-ride="carousel">
+	<div id="carouselExampleCaptions" class="carousel slide mt-3 shadow" data-bs-ride="carousel" data-aos="fade-up">
 		<div class="carousel-inner">
 			<div class="carousel-item active">
 				<img src="<?= $image1 ?? "#" ?>" class="d-block w-100" alt="...">
@@ -74,6 +73,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 	<div class="container g-3">
 		<div class="row">
 			<?php
+			$delay = 500;
 			for ($i=4; $i < 4+$maxArticle; $i++) {
 				$sportCard = $articlesSorted[$i]['sport'];
 				$linkCard = $articlesSorted[$i]['link'];
@@ -83,22 +83,23 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 				$imgCard = $articlesSorted[$i]['img'];
 				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
 
-			<div class="col-md-4 my-3">
-				<div data-aos="fade-right" class="card" style="max-width: 540px;">
-					<div class="row g-0">
-						<div class="col-4">
-							<img src="<?= $imgCard ?>" class="img-fluid rounded-start" alt="...">
-						</div>
-						<div class="col-8">
-							<div class="card-body p-1">
-								<h5 class="card-title cardTitle"><?= $titleCard ?></h5>
-								<p class="card-text cardDesc"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
-								<p class="card-text cardDate text-end"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
+				<div class="col-md-4 my-3">
+					<div data-aos="fade-right" data-aos-delay="<?= ($i < 7) ? $delay : '' ?>" class="card" style="max-width: 540px;">
+						<div class="row g-0">
+							<div class="col-4">
+								<img src="<?= $imgCard ?>" class="img-fluid rounded-start" alt="...">
+							</div>
+							<div class="col-8">
+								<div class="card-body p-1">
+									<h5 class="card-title cardTitle"><?= $titleCard ?></h5>
+									<p class="card-text cardDesc"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
+									<p class="card-text cardDate text-end"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</div>
+				<?php $delay += 100; ?>
 			<?php } ?>
 		</div>
 	</div>
