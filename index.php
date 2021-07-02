@@ -72,10 +72,10 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
 
 				<div class="col-md-4 my-3">
-					<div data-aos="fade-right" data-aos-delay="<?= ($i < 7) ? $delay : '' ?>" class="card p-0" style="max-width: 540px;">
+					<div data-aos="fade-right" data-aos-delay="<?= ($i < 7) ? $delay : '' ?>" class="card cardBG p-0" style="max-width: 540px;">
 						<div class="row g-0">
 							<div class="col-4 position-relative">
-								<div class="coloredSquare"></div>
+								<div class="<?= $sportCard ?>Square"></div>
 								<img src="<?= $imgCard ?>" class="cardImg" alt="...">
 							</div>
 							<div class="col-8">

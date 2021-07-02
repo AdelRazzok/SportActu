@@ -1,14 +1,12 @@
-.dark-mode-activated body {
-  background-color: #1c1c1e;
-  color: #fefefe;
+body{
+  background-color: #1D2025;
 }
-
 /***** Scroll to top btn *****/
 #scroll_to_top {
   position: fixed;
   width: 25px;
   height: 25px;
-  bottom: 120px;
+  bottom: 50px;
   right: 30px;
   background-color: Transparent;
 }
@@ -41,6 +39,10 @@
 }
 
 /***** CARD *****/
+.cardBG{
+  background-color: #1F2933;
+  color: white;
+}
 .cardHeight{
   height: 100px;
 }
@@ -58,19 +60,59 @@
   width:70px;
   height:60px;
   object-fit:cover;
-  top: 23px;
+  top: 20px;
   left: 13px;
   z-index: 5 !important;
 }
-.coloredSquare{
+.Basket-ballSquare{
   position: absolute;
   z-index: 4 !important;
   content: '';
-  width: 47px;
+  width: 57px;
   height: 50px;
-  left: 0;
-  top: 0;
-  background-color: blue;
+  left: 35px;
+  top: 12px;
+  background-color: #ffa73b;
+}
+.FootballSquare{
+  position: absolute;
+  z-index: 4 !important;
+  content: '';
+  width: 57px;
+  height: 50px;
+  left: 35px;
+  top: 12px;
+  background-color: #ff2222;
+}
+.TennisSquare{
+  position: absolute;
+  z-index: 4 !important;
+  content: '';
+  width: 57px;
+  height: 50px;
+  left: 35px;
+  top: 12px;
+  background-color: #c4ff6a;
+}
+.HandballSquare{
+  position: absolute;
+  z-index: 4 !important;
+  content: '';
+  width: 57px;
+  height: 50px;
+  left: 35px;
+  top: 12px;
+  background-color: #3bceff;
+}
+.RugbySquare{
+  position: absolute;
+  z-index: 4 !important;
+  content: '';
+  width: 57px;
+  height: 50px;
+  left: 35px;
+  top: 12px;
+  background-color: #2eba2e;
 }
 .more-info {
   color: orange;
