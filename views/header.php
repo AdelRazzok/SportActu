@@ -1,7 +1,7 @@
 <div class="container-fluid p-0 m-0" style="overflow: hidden;">
-	<div class="row">
+	<div class="row pt-2">
 		<div class="col-6">
-			<a><img src="/assets/img/SoSport_logo_dark2.png" alt="logo" width="120px" class="p-2"></a>
+			<a><img src="/assets/img/sosportdark.png" alt="logo" width="110%"></a>
 		</div>
 		<div class="col-6 d-flex align-items-center justify-content-end">
 		<i class="bi bi-brightness-high me-2"></i>
