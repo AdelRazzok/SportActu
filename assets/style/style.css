@@ -36,7 +36,13 @@
 
 /***** CARD *****/
 .cardTitle {
-  font-size: 0.7rem;
+  font-size: 0.8rem;
+}
+.cardDesc {
+  font-size: 0.6rem;
+}
+.cardDate {
+  font-size: 0.65rem;
 }
 
 .more-info {
