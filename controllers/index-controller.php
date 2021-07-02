@@ -365,21 +365,3 @@ function ResizeDesc($desc) {
     return $desc;
 }
 
-
-
-
-
-
-// if ($preferences[0] = "Basket-ball") {
-    
-// }
-
-
-
-
-
-// for ($i=0; $i < 3; $i++) { 
-//     $preferences[$i];
-// }
-
-var_dump($preferences);
