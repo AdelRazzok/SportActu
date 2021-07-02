@@ -3,6 +3,7 @@
   color: #fefefe;
 }
 
+/***** Scroll to top btn *****/
 #scroll_to_top {
   position: fixed;
   width: 25px;
@@ -31,4 +32,15 @@
 .footer {
   height: 15%;
   background-color: rgba(200, 200, 200, 0.9);
+}
+
+/***** CARD *****/
+.cardTitle {
+  font-size: 0.5rem;
+}
+
+.more-info {
+  color: orange;
+  text-decoration: underline;
+  cursor: pointer;
 }

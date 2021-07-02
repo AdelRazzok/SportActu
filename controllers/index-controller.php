@@ -87,20 +87,13 @@ function GetDescFromXml($xml) {
     return $desc;
 }
 
-function reduc($desc) {   
-$nbr_caracteres_maximum = 30;
+function ResizeDesc($desc) {   
+    $nbr_caracteres_maximum = 100;
     $nbr_caracteres = strlen($desc);
 
-    $point="...";
-
-
-    if($nbr_caracteres >= $nbr_caracteres_maximum)
-    {
-        $desc = mb_substr($desc, 0, $nbr_caracteres_maximum, 'UTF-8');
+    if($nbr_caracteres >= $nbr_caracteres_maximum) {
+        $desc = mb_substr($desc, 0, $nbr_caracteres_maximum, 'UTF-8') . '...';
     }
-    else
-    {
-        $desc;
-    }
+
     return $desc;
 }

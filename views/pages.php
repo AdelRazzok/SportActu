@@ -62,7 +62,7 @@
 				</div>
 				<div class="col-8">
 					<div class="card-body">
-					<h5 class="card-title fs-6"><?= $title ?></h5>
+					<h5 class="card-title"><?= $title ?></h5>
 					<p class="card-text"><?= $desc ?></p>
 					<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i> <?= $time ?></small></p>
 					</div>
