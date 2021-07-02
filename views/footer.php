@@ -1,4 +1,4 @@
-<div class="container-fluid p-0 m-0 fixed-bottom">
+<div class="container-fluid p-0 m-0 fixed-bottom" style="overflow: hidden;">
 
 		<div class="row bg-success">
 			<div class="col-4 text-center">
