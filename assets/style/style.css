@@ -120,3 +120,7 @@ body{
   cursor: pointer;
 }
 
+/***** FOOTER *****/
+.footer_bot {
+  background-color: #1F2933;
+}
