@@ -306,6 +306,10 @@ if (isset($_COOKIE['preferences'])) {
    $Desc1 = GetDescFromXml($xml0);
    $Desc2 = GetDescFromXml($xml1);
    $Desc3 = GetDescFromXml($xml2);
+
+   $Link1 = GetLinkFromXml($xml0);
+   $Link2 = GetLinkFromXml($xml1);
+   $Link3 = GetLinkFromXml($xml2);
     
 }
   
@@ -345,9 +349,13 @@ function GetDescFromXml($xml) {
     $desc = $descArray[0];
     return $desc;
 }
+function GetLinkFromXml($xml) {    
+    $link = $xml->channel->item->link;
+    return $link;
+}
 
 function ResizeDesc($desc) {   
-    $nbr_caracteres_maximum = 100;
+    $nbr_caracteres_maximum = 64;
     $nbr_caracteres = strlen($desc);
 
     if($nbr_caracteres >= $nbr_caracteres_maximum) {
