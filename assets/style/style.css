@@ -124,3 +124,8 @@ body{
 .footer_bot {
   background-color: #1F2933;
 }
+
+.color-svg-dark {
+  fill: #fff;
+  stroke: #fff;
+}

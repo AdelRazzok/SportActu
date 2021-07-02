@@ -1,6 +1,6 @@
 <div class="container-fluid p-0 m-0 fixed-bottom" style="overflow: hidden;">
 
-    <div class="row bg-success py-2">
+    <div class="row py-2" style="background-color: #333C45;">
         <div class="col-4 text-center">
             <a href="sport-1.html"><?= $svgArray[$preferences[0]] ?></a>
         </div>

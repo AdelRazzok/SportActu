@@ -184,6 +184,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 	<script>
 		AOS.init();
 	</script>
+	<script src="./assets/script/script.js"></script>
 </body>
 
 </html>
