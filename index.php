@@ -20,8 +20,8 @@
 	<?php 
 if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
-<div class="container-fluid p-0 m-0 sticky-top">
 
+<div class="container-fluid p-0 m-0 sticky-top">
 		<div class="row bg-success">
 			<div class="col-4 text-center">
 				<a href="sport-1.html"><?= $svgArray[$preferences[0]] ?></a>
