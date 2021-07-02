@@ -20,7 +20,7 @@
 	<?php 
 if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 
-	<div class="container-fluid p-0 m-0 sticky-top">
+	<div class="container-fluid p-0 m-0">
 		<div class="row bg-success">
 			<div class="col-4 text-center">
 				<a href="sport-1.html"><?= $svgArray[$preferences[0]] ?></a>
@@ -84,15 +84,16 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {?>
 				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
 
 				<div class="col-md-4 my-3">
-					<div data-aos="fade-right" data-aos-delay="<?= ($i < 7) ? $delay : '' ?>" class="card" style="max-width: 540px;">
+					<div data-aos="fade-right" data-aos-delay="<?= ($i < 7) ? $delay : '' ?>" class="card p-0" style="max-width: 540px;">
 						<div class="row g-0">
-							<div class="col-4">
-								<img src="<?= $imgCard ?>" class="img-fluid rounded-start" alt="...">
+							<div class="col-4 position-relative">
+								<div class="coloredSquare"></div>
+								<img src="<?= $imgCard ?>" class="cardImg" alt="...">
 							</div>
 							<div class="col-8">
 								<div class="card-body p-1">
-									<h5 class="card-title cardTitle"><?= $titleCard ?></h5>
-									<p class="card-text cardDesc"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
+									<h5 class="card-title cardTitle mx-0 mb-1"><?= $titleCard ?></h5>
+									<p class="card-text cardDesc m-0"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
 									<p class="card-text cardDate text-end"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
 								</div>
 							</div>
