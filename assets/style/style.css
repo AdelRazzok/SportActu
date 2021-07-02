@@ -41,6 +41,9 @@
 }
 
 /***** CARD *****/
+.cardHeight{
+  height: 100px;
+}
 .cardTitle {
   font-size: 0.8rem;
 }
@@ -50,9 +53,27 @@
 .cardDate {
   font-size: 0.65rem;
 }
-
+.cardImg{
+  width:70px;
+  height:60px;
+  object-fit:cover;
+  top: 23px;
+  left: 13px;
+  z-index: 5 !important;
+}
+.cardImg::before{
+  position: absolute;
+  z-index: 40 !important;
+  content: '';
+  width: 47px;
+  height: 50px;
+  left: 0;
+  top: 0;
+  background-color: blue;
+}
 .more-info {
   color: orange;
   text-decoration: underline;
   cursor: pointer;
 }
+
