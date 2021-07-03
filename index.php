@@ -10,7 +10,9 @@
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-	<link href="./assets/style/style.css" rel="stylesheet">
+	<link href="./assets/style/style-light.css" rel="stylesheet" id="theme-link">
+	<?php require './views/header.php'; ?>
+	<script src="./assets/script/scriptTheme.js"></script>
 	<title>Sport Actu</title>
 </head>
 
@@ -18,9 +20,8 @@
 
 
 	<?php 
-if (isset($_COOKIE) && !empty($_COOKIE)) {
+if (isset($_COOKIE) && !empty($_COOKIE)) { ?>
 
-	require './views/header.php'; ?>
 
 	<div id="carouselExampleCaptions" class="carousel slide mt-3 shadow" data-bs-ride="carousel" data-aos="fade-up">
 		<div class="carousel-inner">
@@ -67,12 +68,12 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 				$linkCard = $articlesSorted[$i]['link'];
 				$titleCard = $articlesSorted[$i]['title'];
 				$descCard = $articlesSorted[$i]['desc'];
-				$descCard = ResizeDesc($descCard);
+				$descCardResized = ResizeDesc($descCard);
 				$imgCard = $articlesSorted[$i]['img'];
-				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time'])); ?>
+				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time']));?>
 
-				<div class="col-md-4 my-3">
-					<div data-aos="fade-right" data-aos-delay="<?= ($i <= 7) ? $delay : '' ?>" class="card cardBG p-0" style="max-width: 540px;">
+				<div class="col-md-4 my-4">
+					<div data-aos="fade-right" data-aos-delay="<?= ($i <= 6) ? $delay : '' ?>" class="card cardBG p-0 shadowCards mincardHeight" style="max-width: 540px;">
 						<div class="row g-0">
 							<div class="col-4 position-relative">
 								<div class="<?= $sportCard ?>Square"></div>
@@ -81,7 +82,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 							<div class="col-8">
 								<div class="card-body p-1">
 									<h5 class="card-title cardTitle mx-0 mb-1"><?= $titleCard ?></h5>
-									<p class="card-text cardDesc m-0"><?= $descCard . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
+									<p class="card-text cardDesc m-0" data-bs-toggle="modal" data-bs-target="#Modal<?= $i ?>"><?= $descCardResized ?> <span class="more-info" data-bs-toggle="modal" data-bs-target="#Modal<?= $i ?>"> Plus d'infos</span></p>
 									<p class="card-text cardDate text-end"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
 								</div>
 							</div>
@@ -89,26 +90,26 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 					</div>
 				</div>
 				<?php $delay += 100; ?>
+				<!-- Modal -->
+				<div class="modal fade" id="Modal<?= $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content modalBG modalColor">
+							<img src="<?= $imgCard ?>" class="img-fluid rounded-top" alt="...">
+							<div class="modal-header">
+								<h5 class="modal-title modalTitle" id="exampleModalLabel"><?= $titleCard ?></h5>
+							</div>
+							<div class="modal-body modalDesc">
+								<preview>Description de l'article :</preview><br><?= $descCard ?>
+								<p class="modalDate align-self-bottom text-end mt-4 mb-0"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-color-pink borderRadiusBtn" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-color-green borderRadiusBtn"><a href="<?= $linkCard ?>" class="text-reset text-decoration-none">Aller à l'article</a></button>
+							</div>
+						</div>
+					</div>
+				</div>
 			<?php } ?>
-		</div>
-	</div>
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					...
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
-				</div>
-			</div>
 		</div>
 	</div>
 
@@ -119,60 +120,75 @@ if (isset($_COOKIE) && !empty($_COOKIE)) {
 	<?php require './views/footer.php' ?>
 
 	<?php } else {?>
-	<h1 class="text-center">Veuillez choisir vos 3 sports de préférence</h1>
 
-	<form action="accueil.html" method="post" class="d-flex flex-column align-items-center">
-		<label class="mt-5 mb-3">Vos catégories :</label>
-		<div class="mb-2 form-check">
-			<input type="checkbox" class="form-check-input" id="basket" name="1" value="Basket-ball">
-			<label for="basket" class="form-check-label">Basket-ball</label>
-		</div>
-		<div class="mb-2">
-			<input type="checkbox" class="form-check-input" id="foot" name="2" value="Football">
-			<label for="foot">Football</label>
-		</div>
-		<div class="mb-2">
-			<input type="checkbox" class="form-check-input" id="hand" name="3" value="Handball">
-			<label for="hand">Handball</label>
-		</div>
-		<div class="mb-2">
-			<input type="checkbox" class="form-check-input" id="tennis" name="4" value="Tennis">
-			<label for="tennis">Tennis</label>
-		</div>
-		<div class="mb-4">
-			<input type="checkbox" class="form-check-input" id="rugby" name="5" value="Rugby">
-			<label for="rugby">Rugby</label>
-		</div>
+	<?php require './views/header.php'; ?>
 
-		<p>Nombre d'articles :</p>
+		
+	<div class="container mt-5 p-5">
+		<div class="formBG p-3 shadowParam">
+			<form action="parametre.html" method="post" class="d-flex flex-column align-items-center mb-3 textCOLOR">
+				<label class="mb-4">Veuillez choisir 3 catégories :</label>
+				<div class="row ps-3">
+					<div class="col-6 mb-2">
+						<input type="checkbox" class="form-check-input" id="basket" name="1" value="Basket-ball">
+						<label for="basket" class="form-check-label">Basket-ball</label>
+					</div>
+					<div class="col-6 mb-2">
+						<input type="checkbox" class="form-check-input" id="foot" name="2" value="Football">
+						<label for="foot">Football</label>
+					</div>
+					<div class="col-6 mb-2">
+						<input type="checkbox" class="form-check-input" id="hand" name="3" value="Handball">
+						<label for="hand">Handball</label>
+					</div>
+					<div class="col-6 mb-2">
+						<input type="checkbox" class="form-check-input" id="tennis" name="4" value="Tennis">
+						<label for="tennis">Tennis</label>
+					</div>
+					<div class="col-6 mb-4">
+						<input type="checkbox" class="form-check-input" id="rugby" name="5" value="Rugby">
+						<label for="rugby">Rugby</label>
+					</div>
+				</div>
 
-		<div class="d-flex mb-4">
-			<div>
-				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="6">
-				<label class="form-check-label" for="maxArticle">
-					6
-				</label>
+				<div class="row d-flex justify-content-center my-3 p-0">
+					<hr class="lineparam">
+				</div>
+		
+				<p>Nombre d'articles dans l'accueil :</p>
+		
+				<div class="d-flex mb-4">
+					<div>
+						<input class="form-check-input" type="radio" name="maxArticle" id="max6" value="6">
+						<label class="form-check-label" for="max6">
+							6
+						</label>
+					</div>
+					<div class="mx-5">
+						<input class="form-check-input" type="radio" name="maxArticle" id="max9" value="9" checked>
+						<label class="form-check-label" for="max9">
+							9
+						</label>
+					</div>
+					<div>
+						<input class="form-check-input" type="radio" name="maxArticle" id="max12" value="12">
+						<label class="form-check-label" for="max12">
+							12
+						</label>
+					</div>
+				</div>
+		
+				<div>
+					<input type="submit" value="Appliquer" class="btn btn-color-green borderRadiusBtn">
+				</div>
+			</form>
+		
+			<div <?= (isset($err_msg) || isset($success_msg)) ? 'data-aos="fade-down"' : 'class="d-none"' ?> class="formMsgBG pt-3 pb-2 px-1 fontSize">
+				<p class="text-center err_msg"><?= $err_msg ?? '' ?></p>
+				<p class="text-center success_msg"><?= $success_msg ?? '' ?></p>
 			</div>
-			<div class="mx-3">
-				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="9" checked>
-				<label class="form-check-label" for="maxArticle">
-					9
-				</label>
-			</div>
-			<div>
-				<input class="form-check-input" type="radio" name="maxArticle" id="maxArticle" value="12">
-				<label class="form-check-label" for="maxArticle">
-					12
-				</label>
-			</div>
 		</div>
-
-		<div>
-			<input type="submit" value="Valider" class="btn btn-primary">
-		</div>
-	</form>
-
-	<p class="text-center text-danger"><?= $err_msg ?? '' ?></p>
+	</div>
 
 	<?php } ?>
 

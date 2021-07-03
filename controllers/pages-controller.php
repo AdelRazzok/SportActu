@@ -276,3 +276,14 @@ x="0px" y="0px" width="40px" height="40px" viewBox="0 0 300 300" enable-backgrou
 </g>
 </svg>'
 ];
+
+function ResizeDesc($desc) {   
+    $nbr_caracteres_maximum = 64;
+    $nbr_caracteres = strlen($desc);
+
+    if($nbr_caracteres >= $nbr_caracteres_maximum) {
+        $desc = mb_substr($desc, 0, $nbr_caracteres_maximum, 'UTF-8') . '...';
+    }
+
+    return $desc;
+}
