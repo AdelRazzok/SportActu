@@ -16,7 +16,7 @@
 	<title>Sport Actu</title>
 </head>
 
-<body>
+<body style="visibility: hidden;" onload="js_Load()">
 
 
 	<?php 
@@ -121,9 +121,6 @@ if (isset($_COOKIE) && !empty($_COOKIE)) { ?>
 
 	<?php } else {?>
 
-	<?php require './views/header.php'; ?>
-
-		
 	<div class="container mt-5 p-5">
 		<div class="formBG p-3 shadowParam">
 			<form action="parametre.html" method="post" class="d-flex flex-column align-items-center mb-3 textCOLOR">

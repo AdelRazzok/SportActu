@@ -5,31 +5,34 @@ console.log(theme.getAttribute('href'))
 var headerlogo = document.querySelector('#headerlogo')
 
 var currentTheme = localStorage.getItem('theme')
-if (currentTheme == 'dark') {
+
+if(currentTheme == null){
+    localStorage.setItem('theme', 'light')
+} else if(currentTheme == 'dark') {
     theme.setAttribute('href','./assets/style/style.css')
     headerlogo.setAttribute('src','/assets/img/sosportdark.png')
-} else {
-    theme.setAttribute('href','./assets/style/style-light.css')
 }
+currentTheme = localStorage.getItem('theme')
 
 toggleBtn.addEventListener('click', function(){
-        console.log('event')
-        console.log(theme)
-    if(theme.getAttribute('href') == 'style-light.css'){
-        console.log('if')
-        console.log(theme.getAttribute('href'))
-        console.log(theme)
-        theme.setAttribute('href','./assets/style/style-light.css')
-        headerlogo.setAttribute('src','/assets/img/sosportlight.png')
-        let mytheme = 'light'
-        localStorage.setItem('theme', mytheme)
+    
+    if(currentTheme == 'light'){
+        localStorage.setItem('theme','dark')
+        currentTheme = localStorage.getItem('theme')
     } else {
-        console.log('else')
-        console.log(theme.getAttribute('href'))
-        console.log(theme)
+        localStorage.setItem('theme','light')
+        currentTheme = localStorage.getItem('theme')
+    }
+    console.log(localStorage.getItem('theme'))
+    
+    if(currentTheme == 'dark'){
         theme.setAttribute('href','./assets/style/style.css')
         headerlogo.setAttribute('src','/assets/img/sosportdark.png')
-        let mytheme = 'dark'
-        localStorage.setItem('theme', mytheme)
+    } else {
+        theme.setAttribute('href','./assets/style/style-light.css')
+        headerlogo.setAttribute('src','/assets/img/sosportlight.png')
     }
 })
+function js_Load(){
+    document.body.style.visibility='visible'
+}

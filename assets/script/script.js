@@ -5,6 +5,6 @@ svgs.forEach(e => {
 });
 
 
-if (currentTheme == "dark") {
+if (currentTheme == 'dark') {
     toggleBtn.setAttribute('checked','')
 }

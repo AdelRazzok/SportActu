@@ -16,7 +16,7 @@
 	<title>Sport Actu - <?= $preferences[$_GET['sujet'] - 1] ?></title>
 </head>
 
-<body>
+<body style="visibility: hidden;" onload="js_Load()">
 
 	
 	<h1 class="display-5 textCOLOR text-center my-3 fw-bold">Actu <?= $preferences[$_GET['sujet'] - 1] ?? '' ?></h1>
