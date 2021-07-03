@@ -16,7 +16,7 @@
 	<title>Sport Actu</title>
 </head>
 
-<body style="visibility: hidden;" onload="js_Load()">
+<body>
 
 
 	<?php 
@@ -72,7 +72,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) { ?>
 				$imgCard = $articlesSorted[$i]['img'];
 				$timeCard = date('d/m/Y H:i',strtotime($articlesSorted[$i]['time']));?>
 
-				<div class="col-md-4 my-4">
+				<div class="col-md-4 my-3">
 					<div data-aos="fade-right" data-aos-delay="<?= ($i <= 6) ? $delay : '' ?>" class="card cardBG p-0 shadowCards mincardHeight" style="max-width: 540px;">
 						<div class="row g-0">
 							<div class="col-4 position-relative">

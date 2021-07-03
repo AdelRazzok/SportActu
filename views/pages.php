@@ -16,7 +16,7 @@
 	<title>Sport Actu - <?= $preferences[$_GET['sujet'] - 1] ?></title>
 </head>
 
-<body style="visibility: hidden;" onload="js_Load()">
+<body>
 
 	
 	<h1 class="display-5 textCOLOR text-center my-3 fw-bold">Actu <?= $preferences[$_GET['sujet'] - 1] ?? '' ?></h1>
@@ -39,7 +39,7 @@
         $img = $itm->enclosure['url'];
         $time = date('d/m/Y H:i',strtotime($itm->pubDate.'+2')); ?>
 		
-		<div class="col-md-4 my-4">
+		<div class="col-md-4 my-3">
 			<div data-aos="fade-right" data-aos-delay="<?= ($i <= 3) ? $delay : '' ?>" class="card cardBG p-0 shadowCards mincardHeight" style="max-width: 540px;">
 				<div class="row g-0">
 					<div class="col-4 position-relative">

@@ -17,7 +17,7 @@
 	<title>Préférences</title>
 </head>
 
-<body style="visibility: hidden;" onload="js_Load()">
+<body>
 
 	<div class="container mt-4 px-5">
 		<div class="formBG p-3 shadowParam">

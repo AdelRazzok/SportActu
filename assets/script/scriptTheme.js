@@ -33,6 +33,3 @@ toggleBtn.addEventListener('click', function(){
         headerlogo.setAttribute('src','/assets/img/sosportlight.png')
     }
 })
-function js_Load(){
-    document.body.style.visibility='visible'
-}

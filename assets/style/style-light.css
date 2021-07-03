@@ -115,7 +115,7 @@ body{
   background-color: #2eba2e;
 }
 .more-info {
-  color: #F48FB1;
+  color: #18AA9C;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -150,7 +150,7 @@ body{
 hr.line {
   border: none;
   height: 2px;
-  background: #02DAC5;
+  background: #18AA9C;
   width: 30%;
 }
 /***** PARAM ******/
@@ -163,7 +163,7 @@ hr.line {
 hr.lineparam {
   border: none;
   height: 2px;
-  background: #F48FB1;
+  background: #18AA9C;
   width: 100px;
 }
 .err_msg{
@@ -189,7 +189,7 @@ hr.lineparam {
 
 .btn-color-pink{
   background-color: #333C45;
-  color: #F48FB1;
+  color: whitesmoke;
 }
 .btn-color-green:focus,
 .btn-color-green:active {
@@ -213,10 +213,10 @@ hr.lineparam {
   border-top: 0 none;
 }
 .modalBG{
-  background-color: #1D2025;
+  background-color: #E2E5E3;
 }
 .modalColor{
-  color: whitesmoke;
+  color: #2E2E2E;
 }
 .modalTitle {
   font-size: 0.95rem;
@@ -238,10 +238,32 @@ preview{
 }
 .form-check-input{
   background-color: whitesmoke !important;
+  box-shadow: none !important;
+}
+.form-check-input:active {
+  border-color: none !important;
+  box-shadow: none !important;
 }
 .form-check-input:focus {
-  border-color: none;
+  border-color: none !important;
   outline: none;
+  box-shadow: none !important;
+}
+
+
+.formBG .form-check-input:checked{
+  background-color: #02DAC5 !important;
+  border-color: #2E2E2E !important;
+  box-shadow: none !important;
+}
+.formBG .form-check-input:active {
+  border-color: none !important;
+  box-shadow: none !important;
+}
+.formBG .form-check-input:focus {
+  border-color: none !important;
+  outline: none;
+  box-shadow: none !important;
 }
 .themelogo{
   stroke: #2E2E2E;
@@ -252,10 +274,10 @@ preview{
   box-shadow:
   0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   0 6.7px 5.3px rgba(0, 0, 0, 0.048),
-  0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
-  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12)
+  0 7.5px 5px rgba(0, 0, 0, 0.06),
+  0 12.3px 7.9px rgba(0, 0, 0, 0.072),
+  0 21.8px 13.4px rgba(0, 0, 0, 0.086),
+  0 50px 30px rgba(0, 0, 0, 0.12)
 ;
 }
 
