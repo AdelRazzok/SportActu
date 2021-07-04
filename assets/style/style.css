@@ -189,7 +189,7 @@ hr.lineparam {
 
 .btn-color-pink{
   background-color: #333C45;
-  color: #F48FB1;
+  color: whitesmoke;
 }
 .btn-color-green:focus,
 .btn-color-green:active {
@@ -309,4 +309,16 @@ preview{
     -webkit-box-shadow:0 0 20px rgba(0,0,0,0.8);
     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
     box-shadow:0 0 20px rgba(0,0,0,0.8);
+}
+
+/***** PAGE 404 *****/
+
+.text_404 {
+  color: whitesmoke;
+}
+
+.btn_404 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }

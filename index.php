@@ -103,7 +103,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) { ?>
 								<p class="modalDate align-self-bottom text-end mt-4 mb-0"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
 							</div>
 							<div class="modal-footer">
-								<button type="button" class="btn btn-color-pink borderRadiusBtn" data-bs-dismiss="modal">Close</button>
+								<button type="button" class="btn btn-color-pink borderRadiusBtn" data-bs-dismiss="modal">Fermer</button>
 								<button type="button" class="btn btn-color-green borderRadiusBtn"><a href="<?= $linkCard ?>" class="text-reset text-decoration-none">Aller à l'article</a></button>
 							</div>
 						</div>
