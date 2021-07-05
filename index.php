@@ -64,7 +64,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) { ?>
 		<div class="row">
 			<?php
 			$delay = 500;
-			for ($i=4; $i < 5+$maxArticle; $i++) {
+			for ($i=3; $i < 4+$maxArticle; $i++) {
 				$sportCard = $articlesSorted[$i]['sport'];
 				$linkCard = $articlesSorted[$i]['link'];
 				$titleCard = $articlesSorted[$i]['title'];
