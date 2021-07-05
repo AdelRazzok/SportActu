@@ -7,6 +7,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -14,7 +15,7 @@
 	<link href="./assets/style/style-light.css" rel="stylesheet" id="theme-link">
 	<?php require 'header.php' ?>
 	<script src="./assets/script/scriptTheme.js"></script>
-	<title>Préférences</title>
+	<title>SO SPORT - Paramètres</title>
 </head>
 
 <body>
@@ -78,9 +79,10 @@
 				</div>
 			</form>
 		
-			<div <?= (isset($err_msg) || isset($success_msg)) ? 'data-aos="fade-down"' : 'class="d-none"' ?> class="formMsgBG pt-3 pb-2 px-1 fontSize">
+			<div <?= (isset($err_msg) || isset($success_msg)) ? 'data-aos="fade-down"' : 'class="d-none"' ?> class="formMsgBG pt-3 pb-2 px-1 fontSize <?= isset($success_msg) ? 'msgBoxSize' : '' ?>">
 				<p class="text-center err_msg"><?= $err_msg ?? '' ?></p>
 				<p class="text-center success_msg"><?= $success_msg ?? '' ?></p>
+				<?= isset($success_msg) ? '<button type="button" class="btn btn-color-green borderRadiusBtn btn_404"><a href="accueil.html" class="text-reset text-decoration-none">Retourner à l\'accueil</a></button>' : '' ?>
 			</div>
 		</div>
 	</div>

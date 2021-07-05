@@ -160,6 +160,9 @@ hr.line {
 .formMsgBG{
   background-color: #1D2025;
 }
+.msgBoxSize{
+  height: 150px;
+}
 hr.lineparam {
   border: none;
   height: 2px;
