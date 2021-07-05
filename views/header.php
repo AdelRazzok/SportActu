@@ -1,11 +1,7 @@
 <div class="container-fluid headerBG py-4 m-0 shadowY" style="overflow: hidden;">
 	<div class="row">
 		<div class="col-6">
-<<<<<<< HEAD
-			<a><img src="/assets/img/sosportdark.png" alt="logo" width="120px" class="p-2"></a>
-=======
-			<a><img id="headerlogo" src="/assets/img/sosportlight.png" alt="logo" width="110%"></a>
->>>>>>> 58a00ad11609c91b6e545ace285509ba86cf6045
+			<a href="accueil.html"><img id="headerlogo" src="/assets/img/sosportlight.png" alt="logo" width="110%"></a>
 		</div>
 		<div class="col-6 d-flex align-items-center justify-content-end">
 		<svg class="themelogo" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-brightness-low" viewBox="0 0 16 16">

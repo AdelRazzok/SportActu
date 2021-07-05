@@ -81,7 +81,7 @@ if (isset($_COOKIE) && !empty($_COOKIE)) { ?>
 							</div>
 							<div class="col-8">
 								<div class="card-body p-1">
-									<h5 class="card-title cardTitle mx-0 mb-1"><?= $titleCard ?></h5>
+									<h5 class="card-title cardTitle mx-0 mb-1"><a href="<?= $linkCard ?>" class="text-reset text-decoration-none"><?= $titleCard ?></a></h5>
 									<p class="card-text cardDesc m-0" data-bs-toggle="modal" data-bs-target="#Modal<?= $i ?>"><?= $descCardResized ?> <span class="more-info" data-bs-toggle="modal" data-bs-target="#Modal<?= $i ?>"> Plus d'infos</span></p>
 									<p class="card-text cardDate text-end"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $timeCard ?></small></p>
 								</div>
