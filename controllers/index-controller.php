@@ -313,7 +313,11 @@ if (isset($_COOKIE['preferences'])) {
    $Link3 = GetLinkFromXml($xml2);
     
 } else {
-   
+   $default = [1 => 'Basket-ball', 4 => 'Tennis', 5 => 'Rugby', 'maxArticle' => '9'];
+   $preferences = json_encode($default);
+   var_dump($preferences);
+   setcookie('preferences', $preferences, time() + 86400);
+   header("Refresh:0");
 }
   
 function GetInfoFromXml($xml,&$articles,&$xmlsport) {
