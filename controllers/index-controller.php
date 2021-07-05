@@ -312,6 +312,8 @@ if (isset($_COOKIE['preferences'])) {
    $Link2 = GetLinkFromXml($xml1);
    $Link3 = GetLinkFromXml($xml2);
     
+} else {
+   
 }
   
 function GetInfoFromXml($xml,&$articles,&$xmlsport) {

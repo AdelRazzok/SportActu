@@ -324,3 +324,15 @@ preview{
     -moz-box-shadow:0 0 20px rgba(0,0,0,0.8);
     box-shadow:0 0 20px rgba(0,0,0,0.8);
 }
+
+/***** PAGE 404 *****/
+
+.text_404 {
+  color: #2e2e2e;
+}
+
+.btn_404 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
