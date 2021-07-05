@@ -10,60 +10,72 @@
 		integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-		<link href="./assets/style/style.css" rel="stylesheet">
+	<link href="./assets/style/style-light.css" rel="stylesheet" id="theme-link">
+	<?php require 'header.php' ?>
+	<script src="./assets/script/scriptTheme.js"></script>
 	<title>Sport Actu - <?= $preferences[$_GET['sujet'] - 1] ?></title>
 </head>
 
 <body>
-	<?php require 'header.php' ?>
 
-	<h1 class="display-5 text-center my-3"><?= $preferences[$_GET['sujet'] - 1] ?? '' ?></h1>
+	
+	<h1 class="display-5 textCOLOR text-center my-3 fw-bold">Actu <?= $preferences[$_GET['sujet'] - 1] ?? '' ?></h1>
 
-	<hr>
+	<div class="row d-flex justify-content-center m-0 p-0">
+		<hr class="line">
+	</div>
+	
 
-	<?php foreach ($xml->channel->item as $itm) {
+	<div class="container g-3">
+		<div class="row">
+	<?php $i=0;$delay = 200; foreach ($xml->channel->item as $key => $itm) {
         $sport = $xmlSport;
         $link = $itm->link;
         $title = $itm->title;
         $descstring = $itm->description;
         $descArray = explode('<br /><br />', $descstring);
         $desc = $descArray[0];
+        $descCardResized = ResizeDesc($desc);
         $img = $itm->enclosure['url'];
         $time = date('d/m/Y H:i',strtotime($itm->pubDate.'+2')); ?>
-
-		<div data-aos="fade-right" class="card mb-3" style="max-width: 540px;">
-			<div class="row g-0">
-				<div class="col-4">
-					<img src="<?= $img ?>"class="img-fluid rounded-start" alt="...">
-				</div>
-				<div class="col-8">
-					<div class="card-body">
-					<h5 class="card-title"><?= $title ?></h5>
-					<p class="card-text"><?= $desc . ' <span class="more-info" data-bs-toggle="modal" data-bs-target="#exampleModal">Plus d\'infos</span>' ?></p>
-					<p class="card-text"><small class="text-muted"><i class="bi bi-clock"></i> <?= $time ?></small></p>
+		
+		<div class="col-md-4 my-3">
+			<div data-aos="fade-right" data-aos-delay="<?= ($i <= 3) ? $delay : '' ?>" class="card cardBG p-0 shadowCards mincardHeight" style="max-width: 540px;">
+				<div class="row g-0">
+					<div class="col-4 position-relative">
+						<div class="<?= $sport ?>Square"></div>
+						<img src="<?= $img ?>"class="cardImg" alt="...">
+					</div>
+					<div class="col-8">
+						<div class="card-body p-1">
+						<h5 class="card-title cardTitle mx-0 mb-1"><?= $title ?></h5>
+						<p class="card-text cardDesc m-0" data-bs-toggle="modal" data-bs-target="#Modal<?= $i ?>"><?= $descCardResized ?> <span class="more-info" data-bs-toggle="modal" data-bs-target="#Modal<?= $i ?>"> Plus d'infos</span></p>
+						<p class="card-text cardDate text-end"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i> <?= $time ?></small></p>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-
-    <?php } ?>
-
-	<!-- Modal -->
-	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-				<div class="modal-body">
-					...
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+			<!-- Modal -->
+			<div class="modal fade" id="Modal<?= $i ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered">
+					<div class="modal-content modalBG modalColor">
+						<img src="<?= $img ?>" class="img-fluid rounded-top" alt="...">
+						<div class="modal-header">
+							<h5 class="modal-title modalTitle" id="exampleModalLabel"><?= $title ?></h5>
+						</div>
+						<div class="modal-body modalDesc">
+							<preview>Description de l'article :</preview><br><?= $desc ?>
+							<p class="modalDate align-self-bottom text-end mt-4 mb-0"><small class="text-muted"><i class="bi bi-clock me-1 mt-2"></i><?= $time ?></small></p>
+						</div>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-color-pink borderRadiusBtn" data-bs-dismiss="modal">Close</button>
+							<button type="button" class="btn btn-color-green borderRadiusBtn"><a href="<?= $link ?>" class="text-reset text-decoration-none">Aller à l'article</a></button>
+						</div>
+					</div>
 				</div>
 			</div>
+    <?php $i++;$delay += 100;} ?>
 		</div>
 	</div>
 
