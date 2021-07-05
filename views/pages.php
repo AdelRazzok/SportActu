@@ -40,7 +40,7 @@
         $time = date('d/m/Y H:i',strtotime($itm->pubDate.'+2')); ?>
 		
 		<div class="col-md-4 my-3">
-			<div data-aos="fade-right" data-aos-delay="<?= ($i <= 3) ? $delay : '' ?>" class="card cardBG p-0 shadowCards mincardHeight" style="max-width: 540px;">
+			<div data-aos="fade-right" data-aos-delay="<?= ($i <= 4) ? $delay : '' ?>" class="card cardBG p-0 shadowCards mincardHeight" style="max-width: 540px;">
 				<div class="row g-0">
 					<div class="col-4 position-relative">
 						<div class="<?= $sport ?>Square"></div>
